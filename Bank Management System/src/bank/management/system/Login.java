@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.util.Arrays;
 
 public class Login extends JFrame implements ActionListener {
     JLabel label1,label2,label3;
@@ -92,6 +94,7 @@ public class Login extends JFrame implements ActionListener {
         setLayout(null);
         setSize(850, 480);
         setLocation(450, 200);
+        setUndecorated(true);
         setVisible(true); // This should be at the end, else the images won't be visible
     }
 
@@ -99,6 +102,19 @@ public class Login extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         try {
             if(e.getSource()==button1){
+                Con c=new Con();
+                String cardno=textField2.getText();
+                char[] password = passwordField3.getPassword();
+                String pin = new String(password);
+                Arrays.fill(password, ' ');
+                String q="select * from login where card_number='"+cardno+"' and pin='"+pin+"'";
+                ResultSet resultSet=c.statement.executeQuery(q);
+                if(resultSet.next()){
+                    new main_Class(pin);
+                    setVisible(false);
+                }else{
+                    JOptionPane.showMessageDialog(null,"Incorrect Card Number or PIN");
+                }
 
             } else if (e.getSource()==button2) {
                 textField2.setText("");
