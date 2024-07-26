@@ -16,7 +16,7 @@ public class Deposit extends JFrame implements ActionListener {
         Image i2=i1.getImage().getScaledInstance(1550,830,Image.SCALE_DEFAULT);
         ImageIcon i3=new ImageIcon(i2);
         JLabel l1=new JLabel(i3);
-        l1.setBounds(0,0,1550,830);
+        l1.setBounds(0,0,1550,790);
         add(l1);
 
         JLabel l2=new JLabel("ENTER AMOUNT YOU WANT TO DEPOSIT");
@@ -64,9 +64,11 @@ public class Deposit extends JFrame implements ActionListener {
                     Con c=new Con();
                     c.statement.executeUpdate("insert into bank values('"+pin+"','"+date+"','Deposit','"+amount+"')");
                     JOptionPane.showMessageDialog(null,"Rs. "+amount+" Deposited Successfully");
+                    new main_Class(pin);
                     setVisible(false);
                 }
             } else if (e.getSource()==b2) {
+                new main_Class(pin);
                 setVisible(false);
             }
         }catch (Exception E){
