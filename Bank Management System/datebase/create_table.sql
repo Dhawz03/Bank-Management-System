@@ -1,23 +1,50 @@
-create database bankSystem;
-use bankSystem;
+CREATE DATABASE bankSystem;
+USE bankSystem;
 
-create table login (
+CREATE TABLE login (
     form_no INT PRIMARY KEY,
     card_number VARCHAR(30) NOT NULL,
     pin VARCHAR(30) NOT NULL
 );
 
-create table signup(form_no varchar(30),name varchar(30),father_name varchar(30),
-DOB varchar(30),gender varchar(10),email varchar(60),marital_status varchar(10),
-address varchar(60),city varchar(30),pincode varchar(10),state varchar(50));
+CREATE TABLE signup (
+    form_no VARCHAR(30),
+    name VARCHAR(30),
+    father_name VARCHAR(30),
+    DOB VARCHAR(30),
+    gender VARCHAR(10),
+    email VARCHAR(60),
+    marital_status VARCHAR(10),
+    address VARCHAR(60),
+    city VARCHAR(30),
+    pincode VARCHAR(10),
+    state VARCHAR(50)
+);
 
-create table signuptwo(form_no varchar(30),religion varchar(30),category varchar(30),
-income varchar(30),education varchar(30),occupation varchar(60),pan varchar(20),
-aadhar varchar(30),seniorcitizen varchar(30),existing_account varchar(10));
- 
-create table signupthree(form_no varchar(30),account_type varchar(30),card_number varchar(30),
-pin varchar(30),facility varchar(200));
-create table login(form_no varchar(30),card_number varchar(50),pin varchar(30));
+CREATE TABLE signuptwo (
+    form_no VARCHAR(30),
+    religion VARCHAR(30),
+    category VARCHAR(30),
+    income VARCHAR(30),
+    education VARCHAR(30),
+    occupation VARCHAR(60),
+    pan VARCHAR(20),
+    aadhar VARCHAR(30),
+    seniorcitizen VARCHAR(30),
+    existing_account VARCHAR(10)
+);
 
-create table bank(pin varchar(30),date varchar(50),type varchar(30),amount varchar(20));
+CREATE TABLE signupthree (
+    form_no VARCHAR(30),
+    account_type VARCHAR(30),
+    card_number VARCHAR(30),
+    pin VARCHAR(30),
+    facility VARCHAR(200)
+);
 
+CREATE TABLE bank (
+    pin VARCHAR(30),
+    date VARCHAR(50),
+    type VARCHAR(30),
+    amount VARCHAR(20)
+);
