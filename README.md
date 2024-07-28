@@ -10,9 +10,7 @@ A comprehensive Bank Management System designed using Java and Java-FX for the f
 - [Installation](#installation)
 - [Usage](#usage)
 - [Database Schema](#database-schema)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
+  
 
 ## Introduction
 
@@ -74,7 +72,7 @@ After signing in, users have access to the following features:
 
 3. **Configure the project:**
     - Open the project in IntelliJ IDEA.
-    - Update the database connection settings in the configuration file (`src/main/resources/db.properties`).
+    - Update the database connection settings in the configuration file (`Bank Management System\src\bank\management\system\Con.java`).
 
 4. **Build and run the project:**
     - Use IntelliJ IDEA to build and run the project.
@@ -98,14 +96,5 @@ The MySQL database consists of the following tables:
 4. **signupthree:** Contains fields for account type, services required, card number, and PIN generated during the third signup page.
 5. **bank:** Contains fields for PIN, date, type (deposit/withdrawal), and amount.
 
-## Contributing
-
-Contributions are welcome! Please follow these steps to contribute:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes and commit them (`git commit -m 'Add new feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Create a pull request.
 
 
